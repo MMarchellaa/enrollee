@@ -1,0 +1,29 @@
+spring:
+  liquibase:
+    enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: habrpguser
+    password: pgpwd4habr
+    url: jdbc:postgresql://localhost:5432/habrdb
+    name: habrdb
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  application:
+    name: enrollee-registration
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring:
+          json:
+            type:
+              mapping: EnrolleeDto:com.mihalkovich.enrollee.dto.EnrolleeDto,DreamSpecialityDto:com.mihalkovich.enrollee.dto.DreamSpecialityDto
+server:
+  port: 8000
