@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-group
+      author: Mark
+      changes:
+        - createTable:
+            tableName: emergency_contact_info
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: full_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: telephone_number
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: relationship
+                  type: varchar(200)
+                  constraints:
+                    nullable: false

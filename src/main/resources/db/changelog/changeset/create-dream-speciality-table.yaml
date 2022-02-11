@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-contact-info
+      author: Mark
+      changes:
+        - createTable:
+            tableName: dream_speciality
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: university
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: faculty
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: speciality
+                  type: varchar(200)
+                  constraints:
+                    nullable: false

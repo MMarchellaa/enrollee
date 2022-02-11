@@ -1,0 +1,78 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-group
+      author: Mark
+      changes:
+        - createTable:
+            tableName: enrollee
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: patronymic
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sex
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: year_of_birth
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: native_city
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: contact_info_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: contact_info_id
+                    references: contact_info(id)
+                    nullable: false
+              - column:
+                  name: study_certificate_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: study_certificate(id)
+                    references: study_certificate(id)
+                    nullable: false
+              - column:
+                  name: emengency_contact_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: emergency_contact_info_id
+                    references: emergency_contact_info(id)
+                    nullable: false
+              - column:
+                  name: dream_speciality_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: dream_speciality_id
+                    references: dream_speciality(id)
+                    nullable: false
+              - column:
+                  name: passport_number
+                  type: varchar(200)
+                  constraints:
+                    nullable: false

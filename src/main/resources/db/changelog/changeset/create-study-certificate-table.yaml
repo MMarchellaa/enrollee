@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-timetable
+      author: Mark
+      changes:
+        - createTable:
+            tableName: study_certificate
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: average_rating
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_gold_medalist
+                  type: boolean
+                  constraints:
+                    nullable: false

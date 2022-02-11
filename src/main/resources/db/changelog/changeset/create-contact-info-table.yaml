@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-contact-info
+      author: Mark
+      changes:
+        - createTable:
+            tableName: contact_info
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: telephone_number
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(200)
+                  constraints:
+                    nullable: false

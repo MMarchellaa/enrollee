@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-timetable
+      author: Mark
+      changes:
+        - createTable:
+            tableName: school_subject_rating_mapping
+            columns:
+              - column:
+                  name: subject_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rating_results
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: study_certificate_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: group_id
+                    references: study_certificate(id)
+                    nullable: false

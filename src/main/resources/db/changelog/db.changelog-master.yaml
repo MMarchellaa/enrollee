@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-study-certificate-table.yaml
+  - include:
+      file: db/changelog/changeset/create-emergency-contact-info-table.yaml
+  - include:
+      file: db/changelog/changeset/create-contact-info-table.yaml
+  - include:
+      file: db/changelog/changeset/create-dream-speciality-table.yaml
+  - include:
+      file: db/changelog/changeset/create-enrollee-table.yaml
+  - include:
+      file: db/changelog/changeset/create-school-subject-rating-mapping.yaml
+  - include:
+      file: db/changelog/changeset/create-subject-rating-mapping.yaml
